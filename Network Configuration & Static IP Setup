@@ -1,0 +1,26 @@
+Found the IP Address & Network Interface
+ip a   # Shows network interfaces
+ip r   # Shows default gateway
+
+
+Edited Netplan Configuration
+sudo nano /etc/netplan/01-network-manager-all.yaml
+
+
+Set Static IP & DNS
+network:
+  version: 2
+  renderer: NetworkManager
+  ethernets:
+    ens33:
+      dhcp4: no
+      addresses: [192.168.122.132/24]
+      gateway4: 192.168.122.2
+      nameservers:
+        addresses: [8.8.8.8, 8.8.4.4]
+
+
+Applied the Changes
+sudo netplan apply
+sudo systemctl restart NetworkManager
+
