@@ -1,0 +1,16 @@
+Set Hostname
+sudo hostnamectl set-hostname cloud362
+
+🔹 Bridge Network Configuration
+sudo brctl addbr bridge0
+sudo brctl addif bridge0 ens33
+
+🔹 Updated Netplan for Bridge
+bridges:
+  bridge0:
+    interfaces: [ens33]
+    addresses: [192.168.122.129/24]
+    gateway4: 192.168.122.2
+
+🔹 Applied Configurations
+sudo netplan apply
