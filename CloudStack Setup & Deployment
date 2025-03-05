@@ -1,0 +1,6 @@
+ Setup Management Database
+
+sudo cloudstack-setup-management
+🔹 Deploying CloudStack Database
+
+sudo cloudstack-setup-databases cloud:password@localhost --deploy-as=root
