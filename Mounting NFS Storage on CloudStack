@@ -1,0 +1,8 @@
+Mounting NFS Storage on CloudStack
+
+🔹 Mounted Storage
+
+sudo mkdir -p /mnt/primary /mnt/secondary
+sudo echo "192.168.145.132:/export/primary /mnt/primary nfs defaults 0 0" >> /etc/fstab
+sudo echo "192.168.145.132:/export/secondary /mnt/secondary nfs defaults 0 0" >> /etc/fstab
+sudo mount -a
