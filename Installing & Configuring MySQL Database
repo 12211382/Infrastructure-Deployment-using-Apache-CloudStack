@@ -1,0 +1,15 @@
+🔹 Installed MySQL
+
+sudo apt install mysql-server -y
+sudo systemctl start mysql
+🔹 Configured MySQL for CloudStack
+
+CREATE DATABASE cloud;
+CREATE DATABASE cloud_usage;
+CREATE USER 'cloud'@'localhost' IDENTIFIED BY 'password';
+GRANT ALL PRIVILEGES ON cloud.* TO 'cloud'@'localhost';
+GRANT ALL PRIVILEGES ON cloud_usage.* TO 'cloud'@'localhost';
+FLUSH PRIVILEGES;
+
+🔹 Verified MySQL Service
+sudo systemctl restart mysql
