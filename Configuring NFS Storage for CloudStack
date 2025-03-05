@@ -1,0 +1,25 @@
+Configuring NFS Storage for CloudStack
+
+
+
+🔹 Created Directories
+
+sh
+Copy
+Edit
+sudo mkdir -p /export/primary /export/secondary
+🔹 Configured NFS Export File
+📄 File: /etc/exports
+
+javascript
+Copy
+Edit
+/export *(rw,async,no_root_squash,no_subtree_check)
+🔹 Restarted NFS Service
+
+sh
+Copy
+Edit
+sudo apt install nfs-kernel-server -y
+sudo exportfs -a
+sudo systemctl restart nfs-kernel-server
